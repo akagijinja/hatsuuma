@@ -1,0 +1,28 @@
+function hatsuuma (){
+  let date = new Date("2022-2-10");
+  for(i=0;i<60;i++){ 
+    let YYYY = Utilities.formatDate(date, 'JST', 'yyyy');
+    let leap = YYYY % 4;
+    let YYYYMMDD = Utilities.formatDate(date, 'JST', 'yyyyMMdd');
+    let result = /[0-9]{4}020[1-5]{1}/.test(YYYYMMDD);
+    let result2 = /[0-9]{4}020[1-6]{1}/.test(YYYYMMDD);
+    if(result == true){ 
+      cal.createAllDayEvent("初午",date); //確認時はこの行と以下（＊）をコメントアウト
+      date.setDate(date.getDate() + 12);
+      Logger.log(YYYYMMDD);
+      Logger.log(result);
+    }else if(result2 == true && leap === 0){
+      cal.createAllDayEvent("初午",date); //＊
+      date.setDate(date.getDate() + 12);
+      Logger.log("閏年")
+      Logger.log(YYYYMMDD);
+      Logger.log(result);
+    }else{
+      cal.createAllDayEvent("初午",date); //＊
+      Logger.log(YYYYMMDD);
+      Logger.log(result);
+    }
+    date.setDate(date.getDate() + 360); //旧暦一年後
+  }
+} 
+//©赤城神社
