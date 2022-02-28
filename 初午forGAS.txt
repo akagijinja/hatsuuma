@@ -1,6 +1,6 @@
 function hatsuuma (){
   let date = new Date("2022-2-10");
-  for(i=0;i<60;i++){ 
+  for(i = 0; i < 60; i++){ 
     let YYYY = Utilities.formatDate(date, 'JST', 'yyyy');
     let leap = YYYY % 4;
     let YYYYMMDD = Utilities.formatDate(date, 'JST', 'yyyyMMdd');
