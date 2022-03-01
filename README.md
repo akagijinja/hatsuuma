@@ -21,7 +21,7 @@ javascriptによって動いています。<br>
 適当なGoogleスプレッドシートを開き、拡張機能からGASを選択し、<br>
 最初の行に以下を入力する↓<br>
 
-const address = "　＊　";<br>
+const address = "＊";<br>
 let cal = CalendarApp.getCalendarById(address);
 
 ＊にはあなたのGoogleアカウントのメールアドレスを入れて下さい。
